@@ -9,7 +9,7 @@ with open( sys.argv[1] if len(sys.argv) > 1 else 'models.yaml','r' ) as stream:
         exit()
 
 assert models != None, 'Oooops!'
-for fldr,mdl in models.items():
+for mdl in models:
     print(f'Downloading {mdl["mname"]}...')
     os.system( f'wget {mdl["dl_url"]} -O bin/{mdl["mname"]}.pth' )
     try:os.mkdir(f'indexes/{mdl["mname"]}/')
