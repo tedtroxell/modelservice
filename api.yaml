@@ -1,0 +1,6 @@
+- endpoint: frcnn
+  version: 1.0
+  handler: object_detector
+- endpoint: image
+  version: 1.0
+  handler: image_classifier

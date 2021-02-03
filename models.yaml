@@ -1,0 +1,17 @@
+# object detection:
+maskrcnn: 
+  dl_url: https://download.pytorch.org/models/maskrcnn_resnet50_fpn_coco-bf2d0c1e.pth
+  mname: mrcnn
+  index: https://raw.githubusercontent.com/pytorch/serve/master/examples/object_detector/index_to_name.json
+  mdl: https://raw.githubusercontent.com/pytorch/serve/master/examples/object_detector/maskrcnn/model.py
+fastrcnn: 
+  dl_url: https://download.pytorch.org/models/fasterrcnn_resnet50_fpn_coco-258fb6c6.pth
+  mname: frcnn
+  index: https://raw.githubusercontent.com/pytorch/serve/master/examples/object_detector/index_to_name.json
+  mdl: https://raw.githubusercontent.com/pytorch/serve/master/examples/object_detector/fastrcnn/model.py
+# image classification: 
+image: 
+  dl_url: https://download.pytorch.org/models/squeezenet1_1-f364aa15.pth
+  mname: image
+  index: https://raw.githubusercontent.com/pytorch/serve/master/examples/image_classifier/index_to_name.json
+  mdl: https://raw.githubusercontent.com/pytorch/serve/master/examples/image_classifier/squeezenet/model.py
