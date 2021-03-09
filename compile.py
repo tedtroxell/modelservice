@@ -24,9 +24,10 @@ def resave(api):
     torch.jit.script( obj ).save( f'bin/{api.endpoint}.jit.pt' )
 
 for api in models:
-    print(f'compiling {api.endpoint}...')
     api = API(**api)
+    print(f'compiling {api.endpoint}...')
     # resave(api)
+    exf = f"--extra-files {api.extrafiles}" if 'extrafiles' in api else ''
     os.system(
-        f'torch-model-archiver --model-name {api.endpoint} --model-file models/{api.endpoint}.py --version {api.version} --extra-files indexes/{api.endpoint}/index_to_name.json --export-path mar --serialized-file bin/{api.endpoint}.pt --handler {api.handler} --force'
+        f'torch-model-archiver --model-name {api.endpoint} --model-file models/{api.endpoint}.py --version {api.version} {exf} --export-path mar --serialized-file bin/{api.endpoint}.pth --handler {api.handler} --force'
     )

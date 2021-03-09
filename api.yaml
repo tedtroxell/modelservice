@@ -1,6 +1,8 @@
-- endpoint: frcnn
+- endpoint: mrcnn
   version: 1.0
   handler: object_detector
+  extrafiles: indexes/mrcnn/index_to_name.json
 - endpoint: image
   version: 1.0
   handler: image_classifier
+  extrafiles: indexes/image/index_to_name.json
