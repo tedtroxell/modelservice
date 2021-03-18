@@ -2,7 +2,11 @@
   version: 1.0
   handler: object_detector
   extrafiles: indexes/mrcnn/index_to_name.json
-- endpoint: image
+- endpoint: classifier
   version: 1.0
   handler: image_classifier
-  extrafiles: indexes/image/index_to_name.json
+  extrafiles: indexes/classifier/index_to_name.json
+- endpoint: ssd
+  version: 0.0.1
+  handler: object_detector
+  extrafiles: indexes/mrcnn/index_to_name.json

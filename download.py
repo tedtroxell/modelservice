@@ -14,7 +14,7 @@ for mdl in models:
     os.system( f'wget {mdl["dl_url"]} -O bin/{mdl["mname"]}.pth' )
     try:os.mkdir(f'indexes/{mdl["mname"]}/')
     except:pass
-    os.system( f'wget {mdl["index"]} -O indexes/{mdl["mname"]}/index_to_name.json' )
+    if "index" in mdl:os.system( f'wget {mdl["index"]} -O indexes/{mdl["mname"]}/index_to_name.json' )
     if "mdl" in mdl:os.system( f'wget {mdl["mdl"]} -O models/{mdl["mname"]}.py' )
 
 
